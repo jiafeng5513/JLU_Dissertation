@@ -36,7 +36,10 @@
 \def\label@ementor{Directed by\ }
 \def\label@ckeywords{关键词：}
 \def\label@ekeywords{KEYWORDS:\ }
-
+\def\label@cnumber{分类号：}
+\def\label@unitcode{单位代码：}
+\def\label@studentid{学\hphantom{汉}号：}
+\def\label@securitylevel{密\hphantom{汉字}级：}
 \def\titlepagename{封面}
 \def\cuniversity{吉林大学}
 \def\euniversity{JiLin University}

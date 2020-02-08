@@ -2,9 +2,9 @@
 =============================
 
 ### 声明
-1. 基于[北京大学学位论文latex模板(pkuthss)](https://gitlab.com/CasperVector/pkuthss)<br>
+1. 基于[北京大学学位论文latex模板(pkuthss)](https://gitea.com/CasperVector/pkuthss)<br>
 2. 本项目与吉林大学官方无关，输出格式未经吉林大学任何学院的教务部门以及相关单位认可，因使用该模板导致任何后果与本人无关.<br>
-
+3. 欢迎吉大校友帮忙完善改进，我们的目标是创建一个属于吉大人自己的、覆盖本硕博的通用论文模板。<br>
 ### 关键文件及其作用
 1. `main.tex`用于安排全文各章节的顺序，也可以直接用于书写正文。<br>
 2. `pkuthss-gbk.def`和`pkuthss-utf8.def`是中文字符常量表。<br>

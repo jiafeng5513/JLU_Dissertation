@@ -12,7 +12,10 @@
 % 采用了自定义的（包括大小写不同于原文件的）字体文件名，
 % 并改动 ctex.cfg 等配置文件的用户请自行加入 nofonts 选项；
 % 其它用户不用加入 nofonts 选项，加入之后反而会产生错误。
-\documentclass[UTF8,openany]{pkuthss}
+% 默认为书籍排版即双面打印，章节从偶数页开始
+% oneside：单面打印
+% openany:章节从任意页码开始
+\documentclass[UTF8,openany,oneside]{pkuthss}
 % 如果的确须要使脚注按页编号的话，可以去掉后面 footmisc 包的注释。
 % 注意：在启用此设定的情况下，可能要多编译一次以产生正确的脚注编号。
 %\usepackage[perpage]{footmisc}
@@ -35,6 +38,7 @@
 	UnitCode = {10183},
 	level = {硕士},
 	DegreeCategory = {学术硕士},
+	securitylevel = {公开},
 	cthesisname = {硕士学位论文},ethesisname = {Master Thesis},
 	ctitle = {中文标题}, etitle = {English Title},
 	cauthor = {贝多芬}, eauthor = {Beethoven},
@@ -86,11 +90,8 @@
 	
 	\include{chap/abs}			% 中西文摘要
 	\tableofcontents			% 自动生成目录。
-
-	% 以下为正文部分，默认要进行章节编号。
-	\mainmatter
-	% 各章节。
-	\include{chap/chap1}
+	\mainmatter% 以下为正文部分，默认要进行章节编号。
+	\include{chap/chap1}% 各章节。
 	\include{chap/chap2}
 	\include{chap/chap3}
 
@@ -104,10 +105,10 @@
 
 	% 以下为正文之后的部分，默认不进行章节编号。
 	\backmatter
-	% 致谢。
-	\include{chap/ack}
-	% 原创性声明和使用授权说明。
-	\include{chap/origin}
+						% 参考文献
+						% 作者简介以及科研成果
+	\include{chap/ack}	% 致谢
+
 \end{document}
 
 % vim:ts=4:sw=4

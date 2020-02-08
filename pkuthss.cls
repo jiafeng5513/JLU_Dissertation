@@ -84,7 +84,9 @@
 \RequirePackage{ulem}
 % `\AtEndOfClass' used to avoid `PDF destination not defined' with setspace.
 \AtEndOfClass{\RequirePackage{hyperref}}
-
+%两端对齐
+\RequirePackage{ragged2e}
+\RequirePackage{letterspace}
 \ifthss@opt@gbk
 	\input{pkuthss-gbk.def}
 	\ifxetex
@@ -241,6 +243,7 @@
 \thss@int@infoitema{DegreeCategory} %学位类别	 （学术硕士/专业硕士/博士）
 \thss@int@infoitema{address}	    %住址邮编
 \thss@int@infoitema{telephone}		%电话号码
+\thss@int@infoitema{securitylevel}  %保密等级
 
 \thss@int@infoitemb{cuniversity}	%学校中文名	（define in *.def file）
 \thss@int@infoitemb{euniversity}	%学校英文名	（define in *.def file）
@@ -353,10 +356,25 @@
 	% Make the title page centered.
 	\begin{titlepage}
 		{%页眉信息
-			
-		\fontsize{15}{15} 分\hspace{0.5cm}类\hspace{0.5cm}号：\textrm{\@cnumber}\hspace{5cm}单位代码：\textrm{\@UnitCode}
-		
-		\fontsize{15}{15} 学\hspace{1.5cm}号：\textrm{\@studentid}\hspace{4.0cm}密\hspace{1.0cm}级：公\hspace{0.4cm}开
+			\begin{center}
+			\begin{minipage}{\textwidth}\fontsize{15}{15}
+				\begin{minipage}[t]{0.45\textwidth}
+					\centering
+					\begin{tabular}{cc} 
+						{\bfseries\label@cnumber}&\textrm {\@cnumber}\\
+						{\bfseries\label@studentid}&\textrm{\@studentid}\\
+					\end{tabular}
+				\end{minipage}
+				\hfill
+				\begin{minipage}[t]{0.45\textwidth}
+					\centering
+					\begin{tabular}{cc}        
+						{\bfseries\label@unitcode}&\textrm{\@UnitCode}\\
+						{\bfseries\label@securitylevel}&\@securitylevel\\
+					\end{tabular}
+				\end{minipage}
+			\end{minipage}
+			\end{center}
 		}
 		
 		\begingroup\centering
@@ -366,10 +384,8 @@
 				\begin{figure}[h]
 					\centerline{\includegraphics[scale=1.0]{./jlu.png}}
 				\end{figure}
-			\end{center}
-			\begin{center}
-				\lishu \fontsize{45}{17} 吉\quad 林\quad 大\quad 学\\
-				\lishu \fontsize{45}{17}硕\quad 士\quad 学\quad 位\quad 论\quad 文
+				\lishu \fontsize{45}{17}\textls[200]{\cuniversity}\\
+				\lishu \fontsize{45}{17}\textls[200]{\cthesisname}
 				\vskip 1.0cm
 				\heiti \zihao{2} {\@ctitle}\\
 				\rmfamily \zihao{2} {\@etitle} 
