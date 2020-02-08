@@ -1,0 +1,16 @@
+.vs/
+/[Tt]emp
+*.tlog
+
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.brf
+*.lbl
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bcf
+*.run.xml
