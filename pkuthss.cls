@@ -253,7 +253,8 @@
 \thss@int@infoitemb{eabstractname}	%摘要英文名	（define in *.def file）
 % Set up document information using the `key = value' grammar.
 \newcommand*{\pkuthssinfo}[1]{\setkeys{thss@info}{#1}}
-
+% 定义logo的大小
+\newcommand{\logowidth}{36mm}
 % Set up page layout.
 \geometry{
 	a4paper, hmargin = 2.6cm, top = 2.92cm, bottom = 3.03cm,
@@ -382,7 +383,7 @@
 			%校徽
 			\begin{center}
 				\begin{figure}[h]
-					\centerline{\includegraphics[scale=1.0]{./jlu.png}}
+					\centerline{\includegraphics[width = \logowidth]{./jlu.png}}
 				\end{figure}
 				\lishu \fontsize{45}{17}\textls[200]{\cuniversity}\\
 				\lishu \fontsize{45}{17}\textls[200]{\cthesisname}
