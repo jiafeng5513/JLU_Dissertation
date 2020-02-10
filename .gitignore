@@ -14,3 +14,5 @@
 *.fls
 *.bcf
 *.run.xml
+*.toc
+*.out
