@@ -447,16 +447,22 @@
 % ===============中文摘要======================
 \newenvironment{cabstract}{%
 	\jlu@int@pdfmark{\cabstractname}{cabstract}
-	\chapter*{\zihao{4}\cabstractname}\markboth{\cabstractname}{}%
-	\centerline{\heiti\zihao{3}\@ctitle}
+	%\chapter{}{}%\markboth{\cabstractname}
+	\begin{center}
+		\zihao{4}\cabstractname\\
+		\heiti\zihao{3}\@ctitle
+	\end{center}
 }{% Keywords at the bottom of the page.
 	\vfill\noindent\textbf{\label@ckeywords}{\@ckeywords}%
 }
 %================英文摘要======================
 \newenvironment{eabstract}{%
 	\jlu@int@pdfmark{\eabstractname}{eabstract}
-	\chapter*{\zihao{4}\eabstractname}\markboth{\eabstractname}{}%
-	\centerline{\heiti\zihao{3}\@etitle}
+	%\chapter{}{}%\markboth{\eabstractname}
+	\begin{center}
+		\zihao{4}\eabstractname\\
+		\heiti\zihao{3}\@etitle
+	\end{center}
 }{% Keywords at the bottom of the page.
 	\vfill\noindent\textbf{\label@ekeywords}{\@ekeywords}%
 }

@@ -85,11 +85,12 @@
 	%\cleardoublepage
 	\include{chap/copyright}	% 投稿声明
 	%\cleardoublepage
-	\pagestyle{plain}	% 此后到下一 \pagestyle 命令之前正常排版页眉和页脚。
-	\setcounter{page}{0}		% 重置页码计数器，用大写罗马数字排版此部分页码。
-	\pagenumbering{Roman}
-	
 	\include{chap/abs}			% 中西文摘要
+	\pagenumbering{Roman}
+	\setcounter{page}{0}		% 重置页码计数器，用大写罗马数字排版此部分页码。
+
+	\pagestyle{plain}	% 此后到下一 \pagestyle 命令之前正常排版页眉和页脚。
+	
 	\tableofcontents			% 自动生成目录。
 	\mainmatter% 以下为正文部分，默认要进行章节编号。
 	\include{chap/chap1}% 各章节。
