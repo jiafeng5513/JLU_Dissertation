@@ -1,7 +1,8 @@
+# ignore editor files
 .vs/
 /[Tt]emp
 *.tlog
-
+# ignore generated files
 *.pdf
 *.aux
 *.bbl
@@ -16,3 +17,8 @@
 *.run.xml
 *.toc
 *.out
+# Ignore private files
+jiafeng5513_main.tex
+jiafeng5513_spine.tex
+jiafeng5513_ref.bib
+jiafeng5513_chap

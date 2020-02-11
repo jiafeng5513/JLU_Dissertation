@@ -11,7 +11,7 @@
 1. `main.tex`用于安排全文各章节的顺序，也可以直接用于书写正文。<br>
 2. `spine.tex`是论文封面。<br>
 3. `jlutex-gbk.def`和`jlutex-utf8.def`是中文字符常量表。<br>
-4. `*.bib`是参考文献表。<br>
+4. `*ref.bib`是参考文献表。<br>
 5. `jlutex.cls`是文档类定义文件，用于自定义文档类、命令和环境。<br>
 6. `./chap/`中是各个章节的独立文件。<br> 
 7. `doc`文件夹中是`backup.tex`(没有实际作用)和pkuthss的文档。<br>
