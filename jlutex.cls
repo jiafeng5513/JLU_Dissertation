@@ -96,6 +96,7 @@
 \RequirePackage{ragged2e}
 % 提供调整字间距的
 \RequirePackage{letterspace}
+
 %==============================================================
 %=                    根据条件启动相应的功能                   =
 %==============================================================
@@ -155,7 +156,8 @@
 	\linespread{1.39}\selectfont
 	% Provides utilities for setting TOC format; `titles' applied to avoid
 	% interfering with LaTeX's own title mechanism.
-	\RequirePackage[titles]{tocloft}
+	%\RequirePackage[titles]{tocloft}
+	\RequirePackage[subfigure,titles]{tocloft}
 	\setlength{\cftbeforechapskip}{6bp plus 1bp}
 	\setlength{\cftsecindent}{\ccwd}
 	\setlength{\cftsubsecindent}{2\ccwd}
@@ -235,6 +237,8 @@
 \def\jlu@int@infoitemb#1{
 	\define@key{jlu@info}{#1}{\@namedef{#1}{##1}}
 }
+
+
 % Set up document information entries.
 \jlu@int@infoitema{ctitle} 		%论文的中文标题
 \jlu@int@infoitema{etitle}			%论文的英文标题

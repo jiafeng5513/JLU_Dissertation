@@ -1,0 +1,1 @@
+del /s *.aux,*.bbl,*.bcf,*.blg,*.fls,*.log,*.out,*.xml,*.toc,*.gz,*.fdb_latexmk
