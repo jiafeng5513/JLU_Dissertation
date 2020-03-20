@@ -140,8 +140,7 @@
 			] (char) {#1};
 		}}%
 	}
-	% Use circled numbers as footnote symbols. Does not affect title page, but
-	% footnote is rarely used in dissertation covers ;)
+	% 使用带圆圈的数字作为脚注符号。 不影响标题页，但脚注很少用于论文封面
 	\renewcommand*{\thefootnote}%
 		{\protect\jlu@int@circled{\arabic{footnote}}}
 	% Provides utility to modify footnote spacing.
@@ -330,12 +329,14 @@
 % The actual page style setup.
 \fancypagestyle{plain}{
 	\fancyhf{}\renewcommand*{\headrulewidth}{0.75bp}
-	\fancyfoot[C]{\zihao{5}\normalfont{\thepage}}
+	 %E偶数页，O奇数页，LCR左中右
 	\if@twoside
-		\fancyhead[CE]{\zihao{5}\normalfont{\cuniversity\cthesisname}}
-		\fancyhead[CO]{\zihao{5}\normalfont\jlu@int@setcase{\leftmark}}
+		\fancyfoot[RO,LE]{\zihao{5}\normalfont{\thepage}}
+		\fancyhead[CE]{\zihao{5}\kaishu{\cuniversity\cthesisname}}
+		\fancyhead[CO]{\zihao{5}\kaishu\jlu@int@setcase{\leftmark}}
 	\else
-		\fancyhead[C]{\zihao{5}\normalfont\jlu@int@setcase{\leftmark}}
+		\fancyfoot[RO,RE]{\zihao{5}\normalfont{\thepage}}
+		\fancyhead[C]{\zihao{5}\kaishu\jlu@int@setcase{\leftmark}}
 	\fi
 }
 \pagestyle{plain}
@@ -470,6 +471,18 @@
 }{% Keywords at the bottom of the page.
 	\vfill\noindent\textbf{\label@ekeywords}{\@ekeywords}%
 }
-
+%================公式======================
+\renewenvironment{equation}{%
+	\incr@eqnum
+	\mathdisplay@push
+	\st@rredfalse \global\@eqnswtrue
+	\mathdisplay{equation}%
+	\hskip \textwidth minus \textwidth
+}{%
+	\leaders\hbox{·}\hskip \textwidth minus \textwidth
+	\endmathdisplay{equation}%
+	\mathdisplay@pop
+	\ignorespacesafterend
+}
 \endinput
 % vim:ft=tex:ts=2:sw=2
