@@ -9,6 +9,7 @@
 3. 欢迎吉大校友帮忙完善改进，我们的最终目标是创建一个属于吉大人自己的、覆盖本硕博的通用论文模板。<br>
 4. 吉林大学本科毕业论文（计算机学院）Latex模板请参考[JLU-CCST-Thesis](https://github.com/x86vk/JLU-CCST-Thesis).<br>
 5. 该模板距离“完美”还有相当的距离，我们的最终目标是使该模板的输出效果像素级满足学院对于学位论文的要求。<br>
+6. 作者来自吉林大学计算机学院，该模板的格式来自于计算机学院的要求（2020年）。<br>
 
 ### 关键文件及其作用
 1. `main.tex`用于安排全文各章节的顺序，也可以直接用于书写正文。<br>
@@ -20,7 +21,7 @@
 7. `doc`文件夹中是`backup.tex`(没有实际作用)和pkuthss的文档。<br>
 8. `cleanup.cmd`用来清除编译过程中产生的中间文件。<br>
 ### build
-1. [texlive](https://tug.org/texlive/) 2018 or later.<br>
+1. [texlive](https://tug.org/texlive/) 2019 or later.<br>
 2. [texstudio](http://texstudio.sourceforge.net/) or [vscode](https://code.visualstudio.com/) with LaTex Workshop extension<br>
 3. build cmd：
    ```bash
@@ -66,3 +67,8 @@
 ### 特别鸣谢
 感谢以下同学提出的修改建议：<br>
 * [P_Lee](https://github.com/TobisLee)
+
+### 重要更新日志
+* 2020年3月25日：
+  1. 使用`cmap`，如此生成的pdf文件在中英文混排下可以复制出正确的文字，转word也能识别（当然转word后排版不一定会变成什么样），这样的pdf能够直接用于查重。
+  2. 切换到texlive2019。<br>

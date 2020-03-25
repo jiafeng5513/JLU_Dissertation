@@ -16,8 +16,6 @@
 %
 % This work consists of the following files:
 %   jlutex.cls
-%   jlutex-gbk.def
-%   jlutex-utf8.def
 %   jlu.png
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
@@ -96,13 +94,14 @@
 \RequirePackage{ragged2e}
 % 提供调整字间距的
 \RequirePackage{letterspace}
-
+% 使生成的pdf在复制文字时不乱码,可直接用于查重
+\RequirePackage{cmap}
 %==============================================================
 %=                    根据条件启动相应的功能                   =
 %==============================================================
 
 \ifjlu@opt@gbk
-	\input{jlutex-gbk.def}
+	%\input{jlutex-gbk.def}
 	\ifxetex
 		% No support for XeLaTeX compilation in non-unicode encoding, i.e. GBK.
 		\ClassError{jlutex}%
@@ -113,7 +112,7 @@
 			}
 	\fi
 \else
-	\input{jlutex-utf8.def}
+	%\input{jlutex-utf8.def}
 \fi
 
 \ifjlu@opt@pkufont
@@ -212,7 +211,7 @@
 		\newcommand*{\setpdfproperties}{%
 			\hypersetup{
 				pdfauthor = {\@eauthor}, pdftitle = {\@etitle},
-				pdfsubject = {\euniversity\ \ethesisname}, pdfkeywords = {\@ekeywords}
+				pdfsubject = {JLU\ \ethesisname}, pdfkeywords = {\@ekeywords}
 			}%
 		}
 		% Set up the properties when generating the title page because the document
@@ -371,7 +370,7 @@
 
 % =================封面========================
 \renewcommand{\maketitle}{%
-	\jlu@int@pdfmark{\titlepagename}{titlepage}
+	\jlu@int@pdfmark{封面}{titlepage}
 	% Make the title page centered.
 	\begin{titlepage}
 		{%页眉信息
@@ -380,16 +379,17 @@
 				\begin{minipage}[t]{0.45\textwidth}
 					\centering
 					\begin{tabular}{cc} 
-						{\bfseries\label@cnumber}&\textrm {\@cnumber}\\
-						{\bfseries\label@studentid}&\textrm{\@studentid}\\
+						%{\bfseries\label@cnumber}&\textrm {\@cnumber}\\
+						{\bfseries分\hphantom{汉}类\hphantom{汉}号：}&\textrm{\@cnumber}\\
+						{\bfseries研究生学号：}&\textrm{\@studentid}\\
 					\end{tabular}
 				\end{minipage}
 				\hfill
 				\begin{minipage}[t]{0.45\textwidth}
 					\centering
 					\begin{tabular}{cc}        
-						{\bfseries\label@unitcode}&\textrm{\@UnitCode}\\
-						{\bfseries\label@securitylevel}&\@securitylevel\\
+						{\bfseries单位代码：}&\textrm{\@UnitCode}\\
+						{\bfseries密\hphantom{汉字}级：}&\@securitylevel\\
 					\end{tabular}
 				\end{minipage}
 			\end{minipage}
@@ -400,36 +400,62 @@
 		{% 校徽，校名，论文种类
 			%校徽
 			\begin{center}
-				\begin{figure}[h]
-					\centerline{\includegraphics[width = \logowidth]{./jlu.png}}
-				\end{figure}
-				\lishu \fontsize{45}{17}\textls[200]{\cuniversity}\\
-				\lishu \fontsize{45}{17}\textls[200]{\cthesisname}
+				
+				\begin{spacing}{1.0}%%行间距变为single-space
+					\begin{figure}[h]
+						\centerline{\includegraphics[width = 3cm]{./jlu.png}}
+					\end{figure}
+					\lishu \zihao{-0}\textls[500]{吉林大学}\\
+					\lishu \zihao{-0}{\cthesisname}\\
+					\lishu \zihao{2}\textbf{（学术学位）}
+				\end{spacing}
 				\vskip 1.0cm
-				\heiti \zihao{2} {\@ctitle}\\
-				\rmfamily \zihao{2} {\@etitle} 
+				\heiti \zihao{3} {\@ctitle}\\
+				\rmfamily \zihao{-3} {\@etitle} 
 			\end{center}
-			%\vskip 1.5cm	
+			\vskip 1.5cm	
 		}
 		\vfill
 		% Information about the author.
-		{%
+		\begin{flushleft}
 			% Slightly adjust the line skip when using new font size.
-			\zihao{3}\linespread{1.75}\selectfont
-			\def\jlu@tmp@len{0.56\textwidth}
-			\begin{tabular}{l@{\extracolsep{0.2em}}c}
-				{\bfseries\label@cauthor}		 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\fangsong\@cauthor}		  \\%作者姓名
-				{\bfseries\label@DegreeCategory} & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\fangsong\@DegreeCategory} \\%学位类别
-				{\bfseries\label@cmajor}		 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\fangsong\@cmajor}		  \\%专业
-				{\bfseries\label@cmentor}		 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\fangsong\@cmentor}		  \\%指导教师
-				{\bfseries\label@school}		 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\fangsong\@school}		  \\%培养单位
-			\end{tabular}%
-		}
+			\songti\zihao{3}{
+				{\bfseries作者姓名：\@cauthor}		 		 \\%作者姓名
+				{\bfseries专\hphantom{汉字}业：\@cmajor} 	 \\%专业
+				{\bfseries研究方向：\@direction} 			 \\%研究方向
+				{\bfseries指导教师：\@cmentor}		 	 	 \\%指导教师
+				{\bfseries培养单位：\@school}		 	 	 \\%培养单位
+			}
+		\end{flushleft}
 		\vfill
 		% Date.
-		{\zihao{-2}\@date}
+		{\songti\zihao{3}\bfseries\@date}
 	\par\endgroup\end{titlepage}%
 }
+%================扉页======================
+\newcommand{\innertitle}{
+	\vskip 2.5cm
+	\begin{center}
+		\songti \zihao{3} {\@ctitle}\\
+		\vskip 1.5cm
+		\rmfamily \zihao{3} {\@etitle}
+	\end{center}
+
+	\vfill
+	\begin{flushleft}
+		% Slightly adjust the line skip when using new font size.
+		\songti\zihao{4}{
+			{作者姓名：\@cauthor}		 		 \\%作者姓名
+			{专\hphantom{汉字}业：\@cmajor} 	 \\%专业
+			{研究方向：\@direction} 			 \\%研究方向
+			{指导教师：\@cmentor}		 	 	 \\%指导教师
+			{培养单位：\@school}		 	 	 \\%培养单位
+			{答辩日期：}						 \\%答辩日期
+		}
+	\end{flushleft}
+	\vskip 2.5cm
+}
+
 %================投稿声明======================
 \newenvironment{mcopyright}{%上定义：留白等待用户内容
 
@@ -451,25 +477,25 @@
 }
 % ===============中文摘要======================
 \newenvironment{cabstract}{%
-	\jlu@int@pdfmark{\cabstractname}{cabstract}
+	\jlu@int@pdfmark{摘要}{cabstract}
 	%\chapter{}{}%\markboth{\cabstractname}
 	\begin{center}
-		\zihao{4}\cabstractname\\
+		\zihao{4}摘要\\
 		\heiti\zihao{3}\@ctitle
 	\end{center}
 }{% Keywords at the bottom of the page.
-	\vfill\noindent\textbf{\label@ckeywords}{\@ckeywords}%
+	\vfill\noindent\textbf{关键词：}{\@ckeywords}%
 }
 %================英文摘要======================
 \newenvironment{eabstract}{%
-	\jlu@int@pdfmark{\eabstractname}{eabstract}
+	\jlu@int@pdfmark{ABSTRACT}{eabstract}
 	%\chapter{}{}%\markboth{\eabstractname}
 	\begin{center}
-		\zihao{4}\eabstractname\\
+		\zihao{4}ABSTRACT\\
 		\heiti\zihao{3}\@etitle
 	\end{center}
 }{% Keywords at the bottom of the page.
-	\vfill\noindent\textbf{\label@ekeywords}{\@ekeywords}%
+	\vfill\noindent\textbf{KEYWORDS : }{\@ekeywords}%
 }
 %================公式======================
 \renewenvironment{equation}{%

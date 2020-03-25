@@ -75,3 +75,17 @@
 		\centering 2020年3月
 	\end{quotation}
 \end{document}
+
+%带下划线并居中的封面信息
+		{%
+			% Slightly adjust the line skip when using new font size.
+			\songti\zihao{3}\linespread{1.75}\selectfont
+			\def\jlu@tmp@len{0.56\textwidth}
+			\begin{tabular}{l@{\extracolsep{0.2em}}c}
+				{\bfseries作者姓名：}		 	 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\bfseries\@cauthor}	 \\%作者姓名
+				{\bfseries专\hphantom{汉字}业：} & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\bfseries\@cmajor}	 \\%专业
+				{\bfseries研究方向：} 			 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\bfseries\@direction} \\%研究方向
+				{\bfseries指导教师：}		 	 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\bfseries\@cmentor}	 \\%指导教师
+				{\bfseries培养单位：}		 	 & \jlu@int@fillinblank{1}{\jlu@tmp@len}{\bfseries\@school}	 \\%培养单位
+			\end{tabular}%
+		}
