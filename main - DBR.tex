@@ -50,20 +50,18 @@
 	securitylevel = {内部2年},
 	cthesisname = {硕士学位论文},ethesisname = {Master Thesis},
 	ctitle = {吉林大学学位论文LaTeX模板示例}, etitle = {Sample of LaTexAa Template for Jilin University Dissertation},
-	cauthor = {安娜学姐}, eauthor = {Anna},
+	cauthor = {}, eauthor = {},
 	address = {吉林省长春市朝阳区前进大街2699号（130012）},
-	telephone={12345678901},
-	studentid = {1234567890},
+	telephone={},
+	studentid = {},
 	date = {2020年3月},
 	school = {计算机科学与技术学院},
 	cmajor = {计算机应用技术}, emajor = {Computer application technology},
 	direction = {计算机图形学与数字媒体},
-	cmentor = {傅里叶\ 副教授}, ementor = {Prof.\ Fourier},
+	cmentor = {}, ementor = {},
 	ckeywords = {吉林大学，LaTeX，学位论文}, ekeywords = {Jilin University, LaTeX, Dissertation}
 }
 
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%以下内容尽量不要修改
 \addbibresource{ref.bib}	% 载入参考文献数据库（注意不要省略“.bib”）。
 
 % 普通用户可删除此段，并相应地删除 chap/*.tex 中的
@@ -138,8 +136,8 @@
 	% heading=bibnumbered : 参考文献列表参与章节
 	 % 作者简介以及科研成果
 	\backmatter					                    
-	\include{chap/AuthorInfo}
-	\include{chap/acknowledgment}	% 致谢
+	\include{chap/AuthorInfo_DBR}
+	%\include{chap/acknowledgment}	% 致谢
 
 \end{document}
 

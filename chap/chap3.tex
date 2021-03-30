@@ -1,1 +1,18 @@
-\chapter{插入表格}
+\chapter{工作主体内容}
+\section{插入图片}
+如图\ref{fig:samplefigure}所示，请在Figure文件夹中存储论文中的图片。
+同时，在图片中出现的文字请尽量使用黑体以及Arial字体以保持和图题相同。
+% TODO: \usepackage{graphicx} required
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1.0\linewidth]{Figure/SampleFigure}
+	\caption{示例图片Sample Figure}
+	\label{fig:samplefigure}
+\end{figure}
+
+\section{插入公式}
+如公式\ref{con:RayDef}所示，模板会自动为公式标号且应用学校要求的格式。
+\begin{equation}
+	L = Origin + HitT \cdot Direction
+	\label{con:RayDef}
+\end{equation}

@@ -421,7 +421,7 @@
 					\end{figure}
 					\lishu \zihao{-0}\textls[500]{吉林大学}\\
 					\lishu \zihao{-0}{\cthesisname}\\
-					\lishu \zihao{2}\textbf{（学术学位）}
+					\lishu \zihao{2}\textbf{（专业学位）}
 				\end{spacing}
 				\vskip 1.0cm
 				\heiti \zihao{3} {\@ctitle}\\
@@ -435,11 +435,11 @@
 			\linespread{1.6}
 			% Slightly adjust the line skip when using new font size.
 			\songti\zihao{3}{
-				{\hspace{1.8cm}\bfseries作者姓名：\@cauthor}		 		 \\%作者姓名
-				{\hspace{1.8cm}\bfseries专\hphantom{汉字}业：\@cmajor} 	 \\%专业
-				{\hspace{1.8cm}\bfseries研究方向：\@direction} 			 \\%研究方向
-				{\hspace{1.8cm}\bfseries指导教师：\@cmentor}		 	 	 \\%指导教师
-				{\hspace{1.8cm}\bfseries培养单位：\@school}		 	 	 \\%培养单位
+				{\hspace{1.8cm}\bfseries作~~者~~姓~~名~：\@cauthor}		 		 \\%作者姓名
+				{\hspace{1.8cm}\bfseries类\hphantom{~~汉~~字~~}别~：\@DegreeCategory} 	 \\%专业
+				{\hspace{1.8cm}\bfseries领域~（方向）：\@direction} 			 \\%研究方向
+				{\hspace{1.8cm}\bfseries指~~导~~教~~师~：\@cmentor}		 	 	 \\%指导教师
+				{\hspace{1.8cm}\bfseries培~~养~~单~~位~：\@school}		 	 	 \\%培养单位
 			}
 		\end{flushleft}
 		\vfill
