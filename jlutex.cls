@@ -394,16 +394,16 @@
 					\centering
 					\begin{tabular}{rl} 
 						%{\bfseries\label@cnumber}&\textrm {\@cnumber}\\
-						{\songti\bfseries分\hphantom{汉}类\hphantom{汉}号：}&\textbf{\@cnumber}\\
-						{\songti\bfseries研究生学号：}&\textbf{\@studentid}\\
+						{\songti\bfseries分\hphantom{汉}类\hphantom{汉}号：}&\textbf{\hspace{-0.4cm}\@cnumber}\\[3pt]
+						{\songti\bfseries研究生学号：}&\textbf{\hspace{-0.4cm}\@studentid}\\[3pt]
 					\end{tabular}
 				\end{minipage}
 				\hfill
 				\begin{minipage}{0.2\textwidth}
 					\centering
 					\begin{tabular}{rl}        
-						{\songti\bfseries单位代码：}&\textbf{\@UnitCode}\\
-						{\songti\bfseries密\hphantom{汉字}级：}&\textbf{\songti\@securitylevel}\\
+						{\songti\bfseries单位代码：}&\textbf{\hspace{-0.4cm}\@UnitCode}\\[3pt]
+						{\songti\bfseries密\hphantom{汉字}级：}&\textbf{\hspace{-0.4cm}\songti\@securitylevel}\\[3pt]
 					\end{tabular}
 				\end{minipage}
 			\end{minipage}
