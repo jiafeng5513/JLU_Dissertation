@@ -1,1 +1,73 @@
-\chapter{插入公式}
+\chapter{相关工作}
+
+\section{引用格式}
+ 1.书或专著:
+ 
+	[序号] 作者.书名 [M].版本(第1版不标注).出版地：出版者，出版年．引文所在的起始或起止页码． 
+	
+ 2.期刊(连续出版物)  
+ 
+   [序号] 著者.题(篇)名[J].刊名，出版年，卷号(期号)：引文所在的起始或起止页码．
+   
+ 3.会议录、论文集、论文汇编中的析出文献 : 
+ 
+  ［序号］析出文献著者.题(篇)名[A].见(英文用In)：原文献著者.论文集名[C].出版地：出版者，出版年.引文所在起始或起止页码．
+  
+  ［1］张玉心.重载货车高摩擦系数合成闸瓦的研制和应用[A].见：中国铁道学会编译.国际重载运输协会制动专题讨论会论文集[C].北京：中国铁道学会，1988.242． 
+  
+  ［2］Hunninghaks G W,Gadek J B,Szapiel S V ,et al.The human alveolar macrophage[A].In:Harris C C ed.Cultured human cells and issues in biomedical research[C].New York:Academic Press,1980.54-56．
+  
+ 4.学位论文：
+ 
+	[序号］著者.题(篇)名[D].保存地点：保存单位，年份.引文所在起始或起止页码．
+	
+ 5.专利文献 
+ 
+  ［序号］专利所有者.题名[P].专利国别：专利号，出版日期． 
+  
+ 6.技术标准:
+ 
+  ［序号］标准编号(标准顺序号-发布年)，标准名称[S]. 
+  
+ 7.报纸 
+ 
+  ［序号］主要责任者.文献题名[N].报纸名，年-月-日(版次)． 
+  
+ 8.科学技术报告
+ 
+  ［序号］著者.报告题名[R].出版地：出版者，出版年．页码． 
+  
+ 9.电子文献 
+ 
+  ［序号］主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出处或可获得地址,发表或更新日期/引用日期(任选). 
+  
+ 	电子文献及载体类型标识:数据库(DB),程序(CP)，电子公告(EB),磁带(MT)，磁盘(DK),光盘(CD),联机网络(OL)
+ 	
+ 10.其他未定义类型的文献 
+ 
+  ［序号］主要责任者.文献题名［Z］.出版地:出版者,出版年.
+  
+
+基本字段:除非特别指出，此部分字段在所有类型条目中均可用。 
+注：在析出文献条目中，author、editor、translator 专指析出文献的作者、编者、译者。
+在 @patent 类条目中，author 也可指专利的持有者。 
+
+\begin{itemize}
+	\item bookauthor、booktitle：析出文献所出自文献的作者和题名。 
+	\item title：文献题名。 
+	\item type：文献类型和电子文献载体标志代码。 
+	\item location：出版地，或（在 @patent 类条目中）专利申请地。 
+	\item publisher：出版者，或学位论文作者申请学位的单位。 
+	\item journal/journaltitle：连续出版物题名，这两个字段是等价的。 
+	\item year/date：出版年、日期，这两个字段只需填写一个即可。 
+	\item volume：期刊中文献所处的卷号。 
+	\item number：期刊中文献所处的期号，或专利的申请号。 
+	\item pages：文献页码。 
+	\item url：文献的 URL。 
+	\item urldate：检索日期，或 URL 的访问日期。 
+	\item addendum：补充说明，排版在文献列表中相应条目的最后。
+\end{itemize}
+
+\section{添加引用}
+请在论文正文中使用supercite命令以引用文献\supercite{Kajiya86}。
+对于同时引用多篇的情况\supercite{Houdini, Han07GeoFilter}，请在一个supercite命令中用逗号分隔多条文献\supercite{Hu07, Kim2019, Ernst05}。
