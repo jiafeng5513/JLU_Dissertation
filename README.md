@@ -67,6 +67,7 @@
 ### 特别鸣谢
 感谢以下同学提出的修改建议：<br>
 * [P_Lee](https://github.com/TobisLee)
+* [Ris](https://github.com/marunemitsu)
 
 ### 重要更新日志
 * 2020年3月25日：
