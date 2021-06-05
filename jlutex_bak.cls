@@ -390,20 +390,20 @@
 		{%页眉信息
 			\begin{center}
 			\begin{minipage}{\textwidth}\fontsize{15}{15}
-				\begin{minipage}{0.2\textwidth}
+				\begin{minipage}[t]{0.45\textwidth}
 					\centering
-					\begin{tabular}{rl} 
+					\begin{tabular}{cc} 
 						%{\bfseries\label@cnumber}&\textrm {\@cnumber}\\
-						{\songti\bfseries分\hphantom{汉}类\hphantom{汉}号：}&\textbf{\hspace{-0.4cm}\@cnumber}\\[3pt]
-						{\songti\bfseries研究生学号：}&\textbf{\hspace{-0.4cm}\@studentid}\\[3pt]
+						{\songti\bfseries分\hphantom{汉}类\hphantom{汉}号：}&\textrm{\@cnumber}\\
+						{\songti\bfseries研究生学号：}&\textrm{\@studentid}\\
 					\end{tabular}
 				\end{minipage}
 				\hfill
-				\begin{minipage}{0.2\textwidth}
+				\begin{minipage}[t]{0.45\textwidth}
 					\centering
-					\begin{tabular}{rl}        
-						{\songti\bfseries单位代码：}&\textbf{\hspace{-0.4cm}\@UnitCode}\\[3pt]
-						{\songti\bfseries密\hphantom{汉字}级：}&\textbf{\hspace{-0.4cm}\songti\@securitylevel}\\[3pt]
+					\begin{tabular}{cc}        
+						{\songti\bfseries单位代码：}&\textrm{\@UnitCode}\\
+						{\songti\bfseries密\hphantom{汉字}级：}&\@securitylevel\\
 					\end{tabular}
 				\end{minipage}
 			\end{minipage}
@@ -421,9 +421,9 @@
 					\end{figure}
 					\lishu \zihao{-0}\textls[500]{吉林大学}\\
 					\lishu \zihao{-0}{\cthesisname}\\
-					\lishu \zihao{2}\textbf{（学术学位）}
+					\lishu \zihao{2}\textbf{（专业学位）}
 				\end{spacing}
-				\vskip 1.0cm	
+				\vskip 1.0cm
 				\heiti \zihao{3} {\@ctitle}\\
 				\sffamily \zihao{-3} {\@etitle} 
 			\end{center}
@@ -435,11 +435,11 @@
 			\linespread{1.6}
 			% Slightly adjust the line skip when using new font size.
 			\songti\zihao{3}{
-				{\hspace{3.5cm}\bfseries作者姓名：\@cauthor}		 		 \\%作者姓名
-				{\hspace{3.5cm}\bfseries专\hphantom{汉字}业：\@cmajor} 	 \\%专业
-				{\hspace{3.5cm}\bfseries研究方向：\@direction} 			 \\%研究方向
-				{\hspace{3.5cm}\bfseries指导教师：\@cmentor}		 	 	 \\%指导教师
-				{\hspace{3.5cm}\bfseries培养单位：\@school}		 	 	 \\%培养单位
+				{\hspace{1.8cm}\bfseries作~~者~~姓~~名~：\@cauthor}		 		 \\%作者姓名
+				{\hspace{1.8cm}\bfseries类\hphantom{~~汉~~字~~}别~：\@DegreeCategory} 	 \\%专业
+				{\hspace{1.8cm}\bfseries领域~（方向）：\@direction} 			 \\%研究方向
+				{\hspace{1.8cm}\bfseries指~~导~~教~~师~：\@cmentor}		 	 	 \\%指导教师
+				{\hspace{1.8cm}\bfseries培~~养~~单~~位~：\@school}		 	 	 \\%培养单位
 			}
 		\end{flushleft}
 		\vfill
@@ -482,14 +482,14 @@
 }{%下定义
 	\noindent
 	\\
-
-  \newcommand{\mycheckbox}[1]{\tikz{\path[draw=#1,fill=#1] (0,0) rectangle (10pt,10pt);}}
-	\newcommand{\myuncheckbox}[1]{\tikz{\path[draw=#1,fill=white] (0,0) rectangle (10pt,10pt);}}
-% 如果是硕士论文，使用下面这行
-	论文级别：\mycheckbox{black} \@level  \hspace{1cm} \myuncheckbox{black} 博士 \\
-% 如果是博士论文，使用下面这行
-% 论文级别：\myuncheckbox{black} \@level  \hspace{1cm} \mycheckbox{black} 博士 \\
-
+	% \newcommand{\mycheckbox}[1]{\tikz{\path[draw=#1]}}
+	% \newcommand{\myuncheckbox}[1]{\tikz{\path[draw=#1]}}
+	% \newcommand{\mycheckbox}[1]{\tikz{\path[draw=#1,fill=#1] (0,0) rectangle (10pt,10pt);}}
+	% \newcommand{\myuncheckbox}[1]{\tikz{\path[draw=#1,fill=white] (0,0) rectangle (10pt,10pt);}}
+	\newcommand{\mycheckbox}[1]{\tikz{\path[draw=black, fill=black] (0,0) rectangle (10pt,10pt);}}
+	\newcommand{\myuncheckbox}[1]{\tikz{\path[draw=black, fill=white] (0,0) rectangle (10pt,10pt);}}
+	论文级别：\mycheckbox{black} \@level  \hspace{0.3cm} \myuncheckbox{black} 博士 \\
+	% 论文级别：$\blacksquare$ \@level \hskip 0.44cm $\square$ 博士\\
 	学科专业：\@cmajor \\
 	论文题目：\@ctitle\\
 	\vskip 1.0cm
@@ -521,8 +521,7 @@
 		\heiti\zihao{3}\@ctitle
 	\end{center}
 }{% Keywords at the bottom of the page.
-	\vskip 0.5cm
-	\noindent\textbf{关键词：}{\@ckeywords}%
+	\vfill\noindent\textbf{关键词：}{\@ckeywords}%
 }
 %================英文摘要======================
 \newenvironment{eabstract}{%
@@ -533,8 +532,7 @@
 		\heiti\zihao{3}\@etitle
 	\end{center}
 }{% Keywords at the bottom of the page.
-	\vskip 0.5cm
-	\noindent\textbf{KEYWORDS: }{\@ekeywords}%
+	\vfill\noindent\textbf{KEYWORDS : }{\@ekeywords}%
 }
 %================公式======================
 \renewenvironment{equation}{%

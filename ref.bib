@@ -1,66 +1,68 @@
-% GB7714-2005
-%==============================================================
-% 1.书或专著:
-%	[序号] 作者.书名 [M].版本(第1版不标注).出版地：出版者，出版年．引文所在的起始或起止页码． 
-% 2.期刊(连续出版物)  
-%   [序号] 著者.题(篇)名[j].刊名，出版年，卷号(期号)：引文所在的起始或起止页码．
-% 3.会议录、论文集、论文汇编中的析出文献 : 
-%  ［序号］析出文献著者.题(篇)名[A].见(英文用In)：原文献著者.论文集名[C].出版地：出版者，出版年.引文所在起始或起止页码． 
-%  ［1］张玉心.重载货车高摩擦系数合成闸瓦的研制和应用[A].见：中国铁道学会编译.国际重载运输协会制动专题讨论会论文集[C].北京：中国铁道学会，1988.242． 
-%  ［2］Hunninghaks G W,Gadek J B,Szapiel S V ,et al.The human alveolar macrophage[A].In:Harris C C ed.Cultured human cells and issues in biomedical research[C].New York:Academic Press,1980.54-56．
-% 4.学位论文：
-%	[序号］著者.题(篇)名[D].保存地点：保存单位，年份.引文所在起始或起止页码．
-% 5.专利文献 
-%  ［序号］专利所有者.题名[P].专利国别：专利号，出版日期． 
-% 6.技术标准:
-%  ［序号］标准编号(标准顺序号-发布年)，标准名称[S]. 
-% 7.报纸 
-%  ［序号］主要责任者.文献题名[N].报纸名，年-月-日(版次)． 
-% 8.科学技术报告
-%  ［序号］著者.报告题名[R].出版地：出版者，出版年．页码． 
-% 9.电子文献 
-%  ［序号］主要责任者.电子文献题名[电子文献及载体类型标识].电子文献的出处或可获得地址,发表或更新日期/引用日期(任选). 
-% 	电子文献及载体类型标识:数据库(DB),程序(CP)，电子公告(EB),磁带(MT)，磁盘(DK),光盘(CD),联机网络(OL)
-% 10.其他未定义类型的文献 
-%  ［序号］主要责任者.文献题名［Z］.出版地:出版者,出版年.
-%==============================================================
-% 基本字段:除非特别指出，此部分字段在所有类型条目中均可用。 
-%==============================================================
-%• author、editor、translator：作者、编者、译者。 
-%	注：在析出文献条目中，author、editor、translator 专指析出文献的作者、编者、译者。
-%	在 @patent 类条目中，author 也可指专利的持有者。 
-%• bookauthor、booktitle：析出文献所出自文献的作者和题名。 
-%• title：文献题名。 
-%• type：文献类型和电子文献载体标志代码。 
-%• location：出版地，或（在 @patent 类条目中）专利申请地。 
-%• publisher：出版者，或学位论文作者申请学位的单位。 
-%• journal/journaltitle：连续出版物题名，这两个字段是等价的。 
-%• year/date：出版年、日期，这两个字段只需填写一个即可。 
-%• volume：期刊中文献所处的卷号。 
-%• number：期刊中文献所处的期号，或专利的申请号。 
-%• pages：文献页码。 
-%• url：文献的 URL。 
-%• urldate：检索日期，或 URL 的访问日期。 
-%• addendum：补充说明，排版在文献列表中相应条目的最后。
-%==============================================================
+@inproceedings{Kajiya86,
+	author = {James T. Kajiya},
+	title = {The Rendering Equation},
+	year = {1986},
+	booktitle = {Proceedings of the 13th Annual Conference on Computer Graphics and Interactive Techniques},
+	pages = {143–150},
+	language = {english},
+	type = {C},
+}
 
-
-@article{test-en,
-	author = {Author},
-	title = {Title},
-	type = {J},
-	journal = {Journal},
-	date = {2014-04-01},
+@Misc{Houdini,
+	author = {Walt Disney Animation Studios},
+	title = {Frozen 2 | Disney},
+	date = {2020-08-11},
+	url ={https://www.sidefx.com/community/frozen-ii/},
+	type = {OL},
 	language = {english},
 }
 
-@article{test-zh,
-	author = {作者},
-	title = {标题},
-	type = {J},
-	journal = {期刊},
-	date = {2014-04-01},
-	language = {chinese},
+@inbook{Kim2019,
+	author = {Kim, Hyuk},
+	title = {Caustics Using Screen-Space Photon Mapping},
+	bookTitle={Ray Tracing Gems: High-Quality and Real-Time Rendering with DXR and Other APIs},
+	editor={Haines, Eric
+	and Akenine-M{\"o}ller, Tomas},
+	publisher={Apress},
+	address={Berkeley, CA},
+	year={2019},
+	pages = {543-555},
+	language = {english},
+	type = {A},
 }
 
-% vim:ts=4:sw=4
+
+@article{Hu07,
+	author = {Hu, Wei and Qin, Kaihuai},
+	year = {2007},
+	pages = {46-57},
+	title = {Interactive Approximate Rendering of Reflections, Refractions, and Caustics},
+	volume = {13},
+	journal = {IEEE Transactions on Visualization and Computer Graphics},
+	doi = {10.1109/TVCG.2007.14},
+	language = {english},
+	type = {J},
+}
+
+@inproceedings{Han07GeoFilter,
+	author = {Han, Charles and Sun, Bo and Ramamoorthi, Ravi and Grinspun, Eitan},
+	title = {Frequency Domain Normal Map Filtering},
+	year = {2007},
+	publisher = {Association for Computing Machinery},
+	doi = {10.1145/1275808.1276412},
+	booktitle = {ACM SIGGRAPH 2007 Papers},
+	pages = {28–es},
+	language = {english},
+	type = {C},
+}
+
+@inproceedings{Ernst05,
+	author = {Ernst, Manfred and Akenine-Möller, Tomas and Jensen, Henrik},
+	title = {Interactive Rendering of Caustics using Interpolated Warped Volumes},
+	year = {2005},
+	publisher = {Canadian Human-Computer Communications Society},
+	booktitle = {Proceedings of Graphics Interface 2005},
+	pages = {87–96},
+	language = {english},
+	type = {C},
+}
