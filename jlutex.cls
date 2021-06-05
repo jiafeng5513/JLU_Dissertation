@@ -482,14 +482,14 @@
 }{%下定义
 	\noindent
 	\\
-	% \newcommand{\mycheckbox}[1]{\tikz{\path[draw=#1]}}
-	% \newcommand{\myuncheckbox}[1]{\tikz{\path[draw=#1]}}
-	% \newcommand{\mycheckbox}[1]{\tikz{\path[draw=#1,fill=#1] (0,0) rectangle (10pt,10pt);}}
-	% \newcommand{\myuncheckbox}[1]{\tikz{\path[draw=#1,fill=white] (0,0) rectangle (10pt,10pt);}}
-	\newcommand{\mycheckbox}[1]{\tikz{\path[draw=black, fill=black] (0,0) rectangle (10pt,10pt);}}
-	\newcommand{\myuncheckbox}[1]{\tikz{\path[draw=black, fill=white] (0,0) rectangle (10pt,10pt);}}
-	论文级别：\mycheckbox{black} \@level  \hspace{0.3cm} \myuncheckbox{black} 博士 \\
-	% 论文级别：$\blacksquare$ \@level \hskip 0.44cm $\square$ 博士\\
+
+  \newcommand{\mycheckbox}[1]{\tikz{\path[draw=#1,fill=#1] (0,0) rectangle (10pt,10pt);}}
+	\newcommand{\myuncheckbox}[1]{\tikz{\path[draw=#1,fill=white] (0,0) rectangle (10pt,10pt);}}
+% 如果是硕士论文，使用下面这行
+	论文级别：\mycheckbox{black} \@level  \hspace{1cm} \myuncheckbox{black} 博士 \\
+% 如果是博士论文，使用下面这行
+% 论文级别：\myuncheckbox{black} \@level  \hspace{1cm} \mycheckbox{black} 博士 \\
+
 	学科专业：\@cmajor \\
 	论文题目：\@ctitle\\
 	\vskip 1.0cm
